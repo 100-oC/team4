@@ -3,10 +3,6 @@
 #include "DxLib.h"	//DXライブラリのインクルード
 #include"Scene/Scene.h"
 
-// define
-#define	SCREEN_SIZE_X	640	// X方向の画面サイズを指定
-#define	SCREEN_SIZE_Y	480	// Y方向の画面サイズを指定
-
 // Win32アプリケーションは WinMain関数 から始まる
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
@@ -55,15 +51,16 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			Scene();
 
 			//-----------------------------------------
-			//ループの終わりに
-			//フリップ関数
-			ScreenFlip();
-
+			
 			//FPS計算
 			CalcFPS();
 
 			//FPS表示（デバック用）
 			DrawFPS();
+			
+			//ループの終わりに
+			//フリップ関数
+			ScreenFlip();
 		}
 
 	}
