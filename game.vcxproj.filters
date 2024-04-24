@@ -25,6 +25,12 @@
     <Filter Include="ソース ファイル\scene\result">
       <UniqueIdentifier>{b6928f54-0d61-45b7-99e2-612d5264347c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\fps">
+      <UniqueIdentifier>{d2289522-deb0-400d-ae8f-739c645f79d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\input">
+      <UniqueIdentifier>{d8455508-4088-4c9a-a28a-ba5112efabb0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -42,6 +48,12 @@
     <ClCompile Include="src\Scene\Result\Result.cpp">
       <Filter>ソース ファイル\scene\result</Filter>
     </ClCompile>
+    <ClCompile Include="src\FrameRate\FrameRate.cpp">
+      <Filter>ソース ファイル\fps</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Input\Input.cpp">
+      <Filter>ソース ファイル\input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Scene\Scene.h">
@@ -55,6 +67,12 @@
     </ClInclude>
     <ClInclude Include="src\Scene\Result\Result.h">
       <Filter>ソース ファイル\scene\result</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FrameRate\FrameRate.h">
+      <Filter>ソース ファイル\fps</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Input\Input.h">
+      <Filter>ソース ファイル\input</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

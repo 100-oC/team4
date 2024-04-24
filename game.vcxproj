@@ -19,6 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\FrameRate\FrameRate.cpp" />
+    <ClCompile Include="src\Input\Input.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Scene\Play\Play.cpp" />
     <ClCompile Include="src\Scene\Result\Result.cpp" />
@@ -26,6 +28,8 @@
     <ClCompile Include="src\Scene\Title\Title.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\FrameRate\FrameRate.h" />
+    <ClInclude Include="src\Input\Input.h" />
     <ClInclude Include="src\Scene\Play\Play.h" />
     <ClInclude Include="src\Scene\Result\Result.h" />
     <ClInclude Include="src\Scene\Scene.h" />
