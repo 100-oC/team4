@@ -31,6 +31,12 @@
     <Filter Include="ソース ファイル\input">
       <UniqueIdentifier>{d8455508-4088-4c9a-a28a-ba5112efabb0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\player">
+      <UniqueIdentifier>{2de9212f-5bf8-48b0-8953-96e02b08e17d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mathPlus">
+      <UniqueIdentifier>{6faf3cd5-b846-4ba9-876f-e6f7ca8c9c8c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -54,6 +60,12 @@
     <ClCompile Include="src\Input\Input.cpp">
       <Filter>ソース ファイル\input</Filter>
     </ClCompile>
+    <ClCompile Include="src\Player\Player.cpp">
+      <Filter>ソース ファイル\player</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MathPlus\MathPlus.cpp">
+      <Filter>ソース ファイル\mathPlus</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Scene\Scene.h">
@@ -73,6 +85,12 @@
     </ClInclude>
     <ClInclude Include="src\Input\Input.h">
       <Filter>ソース ファイル\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Player\Player.h">
+      <Filter>ソース ファイル\player</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MathPlus\MathPlus.h">
+      <Filter>ソース ファイル\mathPlus</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

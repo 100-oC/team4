@@ -11,7 +11,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	SetMainWindowText("ﾃｷﾄｰ");
 
 	//ウィンドウの状態を設定する
-	ChangeWindowMode(true);
+	ChangeWindowMode(false);
 
 	// 画面サイズを変更
 	SetGraphMode(SCREEN_SIZE_X, SCREEN_SIZE_Y, 32);
@@ -43,6 +43,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 			//画面に表示されたものを初期化
 			ClearDrawScreen();
+			Input::Step();
 
 			//-----------------------------------------
 			//ここからゲームの本体を書くことになる
