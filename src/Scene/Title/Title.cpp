@@ -14,7 +14,10 @@ void Title::Init()
 void Title::Step()
 {
 
-	
+	if (Input::Mouse::Push(MOUSE_INPUT_LEFT))
+	{
+		g_CurrentSceneID = SCENE_ID_FIN_TITLE;
+	}
 }
 
 //•`‰æˆ—
