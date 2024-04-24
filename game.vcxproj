@@ -20,6 +20,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Scene\Play\Play.cpp" />
+    <ClCompile Include="src\Scene\Result\Result.cpp" />
+    <ClCompile Include="src\Scene\Scene.cpp" />
+    <ClCompile Include="src\Scene\Title\Title.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Scene\Play\Play.h" />
+    <ClInclude Include="src\Scene\Result\Result.h" />
+    <ClInclude Include="src\Scene\Scene.h" />
+    <ClInclude Include="src\Scene\Title\Title.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

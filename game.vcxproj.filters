@@ -13,10 +13,48 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="ソース ファイル\scene">
+      <UniqueIdentifier>{0eb67bda-b601-4b05-b5ed-f09999ddaf96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\scene\title">
+      <UniqueIdentifier>{da233d8b-ed97-4a24-8bf5-43d2cc13a717}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\scene\play">
+      <UniqueIdentifier>{b0d1304f-f3a9-4c15-ad9e-f140148f367a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\scene\result">
+      <UniqueIdentifier>{b6928f54-0d61-45b7-99e2-612d5264347c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="src\Scene\Scene.cpp">
+      <Filter>ソース ファイル\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\Title\Title.cpp">
+      <Filter>ソース ファイル\scene\title</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\Play\Play.cpp">
+      <Filter>ソース ファイル\scene\play</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\Result\Result.cpp">
+      <Filter>ソース ファイル\scene\result</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Scene\Scene.h">
+      <Filter>ソース ファイル\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\Title\Title.h">
+      <Filter>ソース ファイル\scene\title</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\Play\Play.h">
+      <Filter>ソース ファイル\scene\play</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\Result\Result.h">
+      <Filter>ソース ファイル\scene\result</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

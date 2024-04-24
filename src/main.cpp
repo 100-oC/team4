@@ -1,6 +1,7 @@
 //ウィンドウを表示するプログラム（ひな形）
 
 #include "DxLib.h"	//DXライブラリのインクルード
+#include"Scene/Scene.h"
 
 // define
 #define	SCREEN_SIZE_X	640	// X方向の画面サイズを指定
@@ -48,7 +49,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		//ここからゲームの本体を書くことになる
 		//-----------------------------------------
 
-
+		Scene();
 
 		//-----------------------------------------
 		//ループの終わりに
