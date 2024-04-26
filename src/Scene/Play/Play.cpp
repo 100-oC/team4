@@ -33,7 +33,7 @@ void Play::Init()
 void Play::Step()
 {
 	player.Step();
-	bound.Step();
+	bound.Step(player);
 	ball.Step();
 }
 

@@ -15,6 +15,9 @@ public:
 	void Draw();
 	void Fin();
 
+	float GetPosX() { return x; }
+	float GetPosY() { return y; }
+
 private:
 	int handle;			//‰æ‘œ
 	float x, y;			//À•W

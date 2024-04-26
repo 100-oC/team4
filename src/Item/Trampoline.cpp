@@ -1,5 +1,6 @@
 #include"DxLib.h"
 #include"Trampoline.h"
+#include"../MathPlus/MathPlus.h"
 
 void Trampoline::Init()
 {
@@ -25,8 +26,23 @@ void Trampoline::Init()
 	}
 }
 
-void Trampoline::Step()
+void Trampoline::Step(Player &pl)
 {
+	for (int i = 0; i < TRAMPOLINE_MAX_NUM; i++)
+	{
+		if (!map.mapData.tra[i].isUse)
+		{
+			continue;
+		}
+
+		if (Collision::Rect(pl.GetPosX(), pl.GetPosY(), 64, 64,
+			x[i] - TRA_IMAGE_SIZE_X / 2,
+			y[i] - TRA_IMAGE_SIZE_Y / 2,
+			TRA_IMAGE_SIZE_X, TRA_IMAGE_SIZE_Y))
+		{
+			
+		}
+	}
 
 }
 

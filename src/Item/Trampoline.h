@@ -1,10 +1,14 @@
 #pragma once
 #include"../Map/Map.h"
+#include"../Player/Player.h"
 
 const char TRAMPOLINE_IMAGE_PATH[] =		//画像パス
 {
 	"data/Trampoline/バウンド.png",
 };
+
+const int TRA_IMAGE_SIZE_X = 96;
+const int TRA_IMAGE_SIZE_Y = 32;
 
 class Trampoline
 {
@@ -20,7 +24,7 @@ private:
 
 public:
 	void Init();
-	void Step();
+	void Step(Player &pl);
 	void Draw();
 	void Fin();
 };
