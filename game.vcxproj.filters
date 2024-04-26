@@ -37,6 +37,18 @@
     <Filter Include="ソース ファイル\mathPlus">
       <UniqueIdentifier>{6faf3cd5-b846-4ba9-876f-e6f7ca8c9c8c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Item">
+      <UniqueIdentifier>{6f10be8a-67aa-4764-a278-ec815c7c29d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Item\Trampoline">
+      <UniqueIdentifier>{4f5ab00d-9dc8-4669-b461-581e5621f304}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Item\Ball">
+      <UniqueIdentifier>{cc85c917-1373-4375-92e8-92995fe82a83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Map">
+      <UniqueIdentifier>{9ccf2f4e-4c8d-4da2-819b-e99411b62c66}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -66,6 +78,15 @@
     <ClCompile Include="src\MathPlus\MathPlus.cpp">
       <Filter>ソース ファイル\mathPlus</Filter>
     </ClCompile>
+    <ClCompile Include="src\Item\Ball.cpp">
+      <Filter>ソース ファイル\Item\Ball</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Item\Trampoline.cpp">
+      <Filter>ソース ファイル\Item\Trampoline</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Map\Map.cpp">
+      <Filter>ソース ファイル\Map</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Scene\Scene.h">
@@ -91,6 +112,15 @@
     </ClInclude>
     <ClInclude Include="src\MathPlus\MathPlus.h">
       <Filter>ソース ファイル\mathPlus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Item\Ball.h">
+      <Filter>ソース ファイル\Item\Ball</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Item\Trampoline.h">
+      <Filter>ソース ファイル\Item\Trampoline</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Map\Map.h">
+      <Filter>ソース ファイル\Map</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

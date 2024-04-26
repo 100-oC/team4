@@ -21,7 +21,10 @@
   <ItemGroup>
     <ClCompile Include="src\FrameRate\FrameRate.cpp" />
     <ClCompile Include="src\Input\Input.cpp" />
+    <ClCompile Include="src\Item\Ball.cpp" />
+    <ClCompile Include="src\Item\Trampoline.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Map\Map.cpp" />
     <ClCompile Include="src\MathPlus\MathPlus.cpp" />
     <ClCompile Include="src\Player\Player.cpp" />
     <ClCompile Include="src\Scene\Play\Play.cpp" />
@@ -32,6 +35,9 @@
   <ItemGroup>
     <ClInclude Include="src\FrameRate\FrameRate.h" />
     <ClInclude Include="src\Input\Input.h" />
+    <ClInclude Include="src\Item\Ball.h" />
+    <ClInclude Include="src\Item\Trampoline.h" />
+    <ClInclude Include="src\Map\Map.h" />
     <ClInclude Include="src\MathPlus\MathPlus.h" />
     <ClInclude Include="src\Player\Player.h" />
     <ClInclude Include="src\Scene\Play\Play.h" />
