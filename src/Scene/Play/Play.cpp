@@ -10,9 +10,13 @@ Player player;
 Trampoline bound;
 Ball ball;
 
+int backHandle = - 1;
+
 //‰Šú‰»
 void Play::Init()
 {
+	backHandle = LoadGraph("data/play/background.png");
+
 	player.Init();
 	map.Init(0);
 	bound.Init();
@@ -33,6 +37,8 @@ void Play::Step()
 //•`‰æˆ—
 void Play::Draw()
 {
+	DrawGraph(0, 0, backHandle, true);
+
 	bound.Draw();
 	player.Draw();
 	ball.Draw();
