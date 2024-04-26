@@ -8,7 +8,7 @@ void Player::Init()
 	x = START_POS_X;
 	y = START_POS_Y;
 
-	radian = ChangeDegToRad(90);
+	radian = ChangeDegToRad(90);	//プレイヤーを90°回転
 
 	speed = 0.0f;
 
@@ -23,7 +23,7 @@ void Player::Step()
 	speed += Y_SPEED;
 
 	//下に落とす
-	Move(radian, speed, sX, sY);
+	Move(radian, speed, sX, sY, direction);
 	
 	//進行方向の角度を求める
 	radian = GetAngle(x, y, sX, sY);

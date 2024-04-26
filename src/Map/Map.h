@@ -2,16 +2,20 @@
 
 const int TRAMPOLINE_MAX_NUM = 50;	//トランポリンの最大数
 const int BALL_MAX_NUM = 100;		//ボールの最大数
-const char FILE_PATH[2][255] = //データのファイルパス
+
+enum MAP_ID
+{
+	MAP_TEST,
+	MAP_0,
+	MAP_1,
+
+	MAP_MAX_NUM
+};
+
+const char FILE_PATH[MAP_MAX_NUM][255] = //データのファイルパス
 {	"data/map/mapData_Test.bin",
-	"" };		
-
-//const char IMAGE_PATH[2][255] =		//画像パス
-//{
-//	"data/バウンド.png",
-//	"data/モンスターボール.png",
-//};
-
+	"data/map/mapData_No0.bin", 		
+	"data/map/mapData_No1.bin", };		
 
 //基礎の構造体
 struct Tra

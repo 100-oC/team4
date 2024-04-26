@@ -18,7 +18,10 @@ void Play::Init()
 	backHandle = LoadGraph("data/play/background.png");
 
 	player.Init();
-	map.Init(0);
+
+	//マップの種類：Map.h参照
+	map.Init(MAP_TEST);
+
 	bound.Init();
 	ball.Init();
 

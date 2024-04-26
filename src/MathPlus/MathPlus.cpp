@@ -110,3 +110,21 @@ void Move(float degree, float speed, float& posX, float& posY)
 	posY += speedY;
 	posX += speedX;
 }
+void Move(float degree, float speed, float& posX, float& posY, bool direction)
+{
+	float speedY = 0, speedX = 0;
+	speedX = cosf(degree) * speed;
+	speedY = sinf(degree) * speed;
+
+	posY += speedY;
+	posX += speedX;
+
+	if (speedX < 0)
+	{
+		direction = true;
+	}
+	else
+	{
+		direction = false;
+	}
+}

@@ -23,3 +23,4 @@ VECTOR SudVec(VECTOR vecA, VECTOR vecB);
 float ChangeDegToRad(float degree);
 
 void Move(float degree, float speed, float& posX, float& posY);
+void Move(float degree, float speed, float& posX, float& posY,bool direction);
