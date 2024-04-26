@@ -247,7 +247,7 @@ void MapEditor::DeleteItem()
 			if (setData.tra[i].isUse)
 			{
 
-				if (Collision::Rect(moX + screenNum, moY, 5, 5, (int)setData.tra[i].x - 96 / 2 + screenNum, (int)setData.tra[i].y - 32 / 2, 96, 32))
+				if (Collision::Rect(moX, moY, 5, 5, (int)setData.tra[i].x - 96 / 2 - screenNum, (int)setData.tra[i].y - 32 / 2, 96, 32))
 				{
 					setData.tra[i].x = -1;
 					setData.tra[i].y = -1;
@@ -261,7 +261,7 @@ void MapEditor::DeleteItem()
 		{
 			if (setData.ball[i].isUse)
 			{
-				if (GetDistance(moX + screenNum, moY, setData.ball[i].x + screenNum, setData.ball[i].y) < 32)
+				if (GetDistance(moX, moY, setData.ball[i].x - screenNum, setData.ball[i].y) < 32)
 				{
 					setData.ball[i].x = -1;
 					setData.ball[i].y = -1;
