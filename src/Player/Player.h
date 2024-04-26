@@ -18,7 +18,7 @@ public:
 private:
 	int handle;			//画像
 	float x, y;			//座標
-	float xSpeed, ySpeed;
+	float speed;
 	float radian;		//角度
 	bool direction;		//左右：trueが左	
 

@@ -21,3 +21,5 @@ VECTOR SudVec(VECTOR vecA, VECTOR vecB);
 
 //度をラジアンに変換（引数：度）
 float ChangeDegToRad(float degree);
+
+void Move(float degree, float speed, float& posX, float& posY);

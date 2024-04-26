@@ -99,3 +99,14 @@ float ChangeDegToRad(float degree)
 {
 	return degree * (float)M_PI / 180.0f;
 }
+
+//Œü‚¢‚Ä‚é•ûŒü‚Éi‚ŞFÎ•Ó, ˆÚ“®—Ê, Ši”[æ
+void Move(float degree, float speed, float& posX, float& posY)
+{
+	float speedY = 0, speedX = 0;
+	speedX = cosf(degree) * speed;
+	speedY = sinf(degree) * speed;
+
+	posY += speedY;
+	posX += speedX;
+}

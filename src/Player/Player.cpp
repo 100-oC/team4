@@ -8,10 +8,9 @@ void Player::Init()
 	x = START_POS_X;
 	y = START_POS_Y;
 
-	radian = 0.0f;
+	radian = ChangeDegToRad(90);
 
-	xSpeed = 0.0f;
-	ySpeed = 0.0f;
+	speed = 0.0f;
 
 	direction = false;
 }
@@ -21,16 +20,17 @@ void Player::Step()
 	float sX = x, sY = y;	//保存座標
 
 	//Yスピードを加算
-	ySpeed += Y_SPEED;
+	speed += Y_SPEED;
 
 	//下に落とす
-	sY += ySpeed;
-
+	Move(radian, speed, sX, sY);
+	
 	//進行方向の角度を求める
 	radian = GetAngle(x, y, sX, sY);
 
 	//座標を確定
 	y = sY;
+	x = sX;
 
 	//プレイヤーが画面下に落ちたら
 	if (y >= SCREEN_SIZE_Y + 50)
@@ -38,7 +38,7 @@ void Player::Step()
 		x = START_POS_X;
 		y = START_POS_Y;
 
-		ySpeed = 0.0f;
+		speed = 0.0f;
 	}
 }
 void Player::Draw()
