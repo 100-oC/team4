@@ -8,9 +8,9 @@ void Trampoline::Init()
 	handle = LoadGraph(TRAMPOLINE_IMAGE_PATH);
 
 	//•Ï”‚Ì‰Šú‰»
-	memset(x, -1.0f, sizeof(float));
-	memset(y, -1.0f, sizeof(float));
-	memset(radian, 0.0f, sizeof(float));
+	memset(x, -1, sizeof(float));
+	memset(y, -1, sizeof(float));
+	memset(radian, 0, sizeof(float));
 	memset(isUse, false, sizeof(bool));
 
 	//“Ç‚İæ‚Á‚½ƒf[ƒ^‚ğ”½‰f
@@ -35,12 +35,31 @@ void Trampoline::Step(Player &pl)
 			continue;
 		}
 
-		if (Collision::Rect(pl.GetPosX(), pl.GetPosY(), 64, 64,
+		//“–‚½‚Á‚Ä‚¢‚½‚ç
+		if (Collision::Rect(pl.GetPosX()-32/2, pl.GetPosY()-32/2, 32, 32,
 			x[i] - TRA_IMAGE_SIZE_X / 2,
 			y[i] - TRA_IMAGE_SIZE_Y / 2,
 			TRA_IMAGE_SIZE_X, TRA_IMAGE_SIZE_Y))
 		{
-			
+			float rad = 0.0f;
+			//Šp“x‚ªis•ûŒü‘¤
+			if (pl.GetRadian() >= 0)
+			{
+				//90‹‚©‚çŒ©‚Ä‚ÌŠp“x
+				rad = 90 - ChangeRadToDeg(pl.GetRadian());
+
+			}
+			//ª‚Ì‹t
+			else
+			{
+				//90‹‚©‚çŒ©‚Ä‚ÌŠp“x
+				rad = -90 + ChangeRadToDeg(pl.GetRadian());
+			}
+			//Šp“x‚ğİ’è
+			pl.SetSRadian(ChangeDegToRad(rad * 2));
+			//‘¬‚³‚ğ­‚µ‘‚ß‚é
+			pl.SetSpeed(pl.GetSpeed() * -1.1f);
+
 		}
 	}
 
@@ -53,7 +72,7 @@ void Trampoline::Draw()
 	{
 		if (isUse[i])
 		{
-			DrawRotaGraph(x[i], y[i], 1.0f, radian[i], handle, true);
+			DrawRotaGraphF(x[i], y[i], 1.0f, radian[i], handle, true);
 		}
 	}
 }

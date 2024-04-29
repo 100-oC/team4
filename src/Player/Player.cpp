@@ -9,6 +9,7 @@ void Player::Init()
 	y = START_POS_Y;
 
 	radian = ChangeDegToRad(90);	//プレイヤーを90°回転
+	sRad = 0;
 
 	speed = 0.0f;
 
@@ -22,11 +23,27 @@ void Player::Step()
 	//Yスピードを加算
 	speed += Y_SPEED;
 
+	//変更された角度を戻す
+	if (speed > 0)
+	{
+		if (sRad > 0)
+		{
+			sRad -= 0.05f;
+		}
+		else if (sRad < 0)
+		{
+			sRad += 0.05f;
+		}
+	}
+
 	//下に落とす
-	Move(radian, speed, sX, sY, direction);
+	Move(radian+ sRad, speed, sX, sY, direction);
 	
 	//進行方向の角度を求める
-	radian = GetAngle(x, y, sX, sY);
+	if(speed>=0)
+	{
+		//radian = GetAngle(x, y, sX, sY);
+	}
 
 	//座標を確定
 	y = sY;
@@ -43,7 +60,10 @@ void Player::Step()
 }
 void Player::Draw()
 {
-	DrawRotaGraph(x, y, 0.5f, radian, handle, true, direction);
+	DrawRotaGraphF(x, y, 0.5f, radian+ sRad, handle, true, direction);
+
+	//当たり判定
+	DrawBox(x - 32 / 2, y - 32 / 2, x+32/2, y+32/2, GetColor(255, 0, 0), false);
 }
 void Player::Fin()
 {

@@ -100,6 +100,12 @@ float ChangeDegToRad(float degree)
 	return degree * (float)M_PI / 180.0f;
 }
 
+//ラジアンを度に変換（引数：ラジアン）
+float ChangeRadToDeg(float radian)
+{
+	return radian * 180.0f / (float)M_PI;
+}
+
 //向いてる方向に進む：斜辺, 移動量, 格納先
 void Move(float degree, float speed, float& posX, float& posY)
 {

@@ -7,8 +7,8 @@ void Ball::Init()
 	handle = LoadGraph(BALL_IMAGE_PATH);
 
 	//•Ï”‚Ì‰Šú‰»
-	memset(x, -1.0f, sizeof(float));
-	memset(y, -1.0f, sizeof(float));
+	memset(x, -1, sizeof(float));
+	memset(y, -1, sizeof(float));
 	memset(isUse, false, sizeof(bool));
 
 	//“Ç‚İæ‚Á‚½ƒf[ƒ^‚ğ”½‰f
@@ -35,7 +35,7 @@ void Ball::Draw()
 	{
 		if (isUse[i])
 		{
-			DrawRotaGraph(x[i], y[i], 1.0f, 0.0f, handle, true);
+			DrawRotaGraphF(x[i], y[i], 1.0f, 0.0f, handle, true);
 		}
 	}
 }
