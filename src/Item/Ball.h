@@ -22,4 +22,17 @@ public:
 	void Step();
 	void Draw(int pX, int pY);
 	void Fin();
+
+	// 配列の要素にアクセスするためのゲッター関数
+	float ALLGetBallx(int i) const {
+		if (i >= 0 && i < BALL_MAX_NUM) return x[i];
+		else return -1.0f;
+	}
+	float ALLGetBally(int i) const {
+		if (i >= 0 && i < BALL_MAX_NUM) return y[i];
+		else return -1.0f;
+	}
+	// 配列全体への参照を返すゲッター関数
+	float* ALLGetBallx() { return x; }
+	float* ALLGetBally() { return y; }
 };

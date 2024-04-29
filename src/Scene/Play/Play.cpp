@@ -26,7 +26,7 @@ void Play::Init()
 
 	bound.Init();
 	ball.Init();
-
+	
 	screen.Init();
 
 	//’Êíˆ—‚ÖˆÚ“®
@@ -36,7 +36,8 @@ void Play::Init()
 //’Êíˆ—
 void Play::Step()
 {
-	player.Step();
+
+	player.Step(ball.ALLGetBallx(), ball.ALLGetBally());
 	screen.Step(player);
 	bound.Step(player);
 	ball.Step();
@@ -48,7 +49,7 @@ void Play::Draw()
 	DrawGraph(0, 0, backHandle, true);
 
 	bound.Draw(screen.GetPosX(),screen.GetPosY());
-	player.Draw(screen.GetPosX(), screen.GetPosY());
+	player.Draw(screen.GetPosX(), screen.GetPosY(), ball.ALLGetBallx(), ball.ALLGetBally());
 	ball.Draw(screen.GetPosX(), screen.GetPosY());
 }
 
