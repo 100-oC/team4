@@ -5,10 +5,12 @@
 #include"../../Map/Map.h"
 #include"../../Item/Trampoline.h"
 #include"../../Item/Ball.h"
+#include"../../Screen/Screen.h"
 
 Player player;
 Trampoline bound;
 Ball ball;
+Screen screen;
 
 int backHandle = - 1;
 
@@ -25,6 +27,8 @@ void Play::Init()
 	bound.Init();
 	ball.Init();
 
+	screen.Init();
+
 	//’Êíˆ—‚ÖˆÚ“®
 	g_CurrentSceneID = SCENE_ID_LOOP_PLAY;
 }
@@ -33,6 +37,7 @@ void Play::Init()
 void Play::Step()
 {
 	player.Step();
+	screen.Step(player);
 	bound.Step(player);
 	ball.Step();
 }
@@ -42,9 +47,9 @@ void Play::Draw()
 {
 	DrawGraph(0, 0, backHandle, true);
 
-	bound.Draw();
-	player.Draw();
-	ball.Draw();
+	bound.Draw(screen.GetPosX(),screen.GetPosY());
+	player.Draw(screen.GetPosX(), screen.GetPosY());
+	ball.Draw(screen.GetPosX(), screen.GetPosY());
 }
 
 //I—¹ˆ—

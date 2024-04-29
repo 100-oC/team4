@@ -25,6 +25,6 @@ private:
 public:
 	void Init();
 	void Step(Player &pl);
-	void Draw();
+	void Draw(int pX, int pY);
 	void Fin();
 };

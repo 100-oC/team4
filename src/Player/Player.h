@@ -12,7 +12,7 @@ class Player
 public:
 	void Init();
 	void Step();
-	void Draw();
+	void Draw(int pX,int pY);
 	void Fin();
 
 	float GetPosX() { return x; }

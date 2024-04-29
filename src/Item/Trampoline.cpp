@@ -65,14 +65,14 @@ void Trampoline::Step(Player &pl)
 
 }
 
-void Trampoline::Draw()
+void Trampoline::Draw(int pX, int pY)
 {
 	//ƒgƒ‰ƒ“ƒ|ƒŠƒ“•\Ž¦
 	for (int i = 0; i < TRAMPOLINE_MAX_NUM; i++)
 	{
 		if (isUse[i])
 		{
-			DrawRotaGraphF(x[i], y[i], 1.0f, radian[i], handle, true);
+			DrawRotaGraphF(x[i] - pX, y[i] - pY, 1.0f, radian[i], handle, true);
 		}
 	}
 }

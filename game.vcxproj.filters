@@ -49,6 +49,9 @@
     <Filter Include="ソース ファイル\Map">
       <UniqueIdentifier>{9ccf2f4e-4c8d-4da2-819b-e99411b62c66}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Screen">
+      <UniqueIdentifier>{2bbddcc4-ef14-4672-9542-052b8fab89c6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -87,6 +90,9 @@
     <ClCompile Include="src\Map\Map.cpp">
       <Filter>ソース ファイル\Map</Filter>
     </ClCompile>
+    <ClCompile Include="src\Screen\Screen.cpp">
+      <Filter>ソース ファイル\Screen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Scene\Scene.h">
@@ -121,6 +127,9 @@
     </ClInclude>
     <ClInclude Include="src\Map\Map.h">
       <Filter>ソース ファイル\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Screen\Screen.h">
+      <Filter>ソース ファイル\Screen</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

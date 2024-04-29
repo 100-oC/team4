@@ -28,14 +28,14 @@ void Ball::Step()
 
 }
 
-void Ball::Draw()
+void Ball::Draw(int pX, int pY)
 {
 	//ƒgƒ‰ƒ“ƒ|ƒŠƒ“•\Ž¦
 	for (int i = 0; i < BALL_MAX_NUM; i++)
 	{
 		if (isUse[i])
 		{
-			DrawRotaGraphF(x[i], y[i], 1.0f, 0.0f, handle, true);
+			DrawRotaGraphF(x[i] - pX, y[i] - pY, 1.0f, 0.0f, handle, true);
 		}
 	}
 }

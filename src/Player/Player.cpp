@@ -8,7 +8,7 @@ void Player::Init()
 	x = START_POS_X;
 	y = START_POS_Y;
 
-	radian = ChangeDegToRad(90);	//プレイヤーを90°回転
+	radian = ChangeDegToRad(45);	//プレイヤーを90°回転
 	sRad = 0;
 
 	speed = 0.0f;
@@ -58,12 +58,12 @@ void Player::Step()
 		speed = 0.0f;
 	}
 }
-void Player::Draw()
+void Player::Draw(int pX, int pY)
 {
-	DrawRotaGraphF(x, y, 0.5f, radian+ sRad, handle, true, direction);
+	DrawRotaGraphF(x - pX, y - pY, 0.5f, radian + sRad, handle, true, direction);
 
 	//当たり判定
-	DrawBox(x - 32 / 2, y - 32 / 2, x+32/2, y+32/2, GetColor(255, 0, 0), false);
+	DrawBox(x - 32 / 2-pX, y - 32 / 2-pY, x+32/2-pX, y+32/2-pY, GetColor(255, 0, 0), false);
 }
 void Player::Fin()
 {
