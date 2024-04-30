@@ -95,6 +95,7 @@ void Player::Step(float poleX[BALL_MAX_NUM], float poleY[BALL_MAX_NUM])
 
 		speed = 0.0f;
 		velocityY = 0.0;
+		velocityX = 0.0;
 	}
 
 }
@@ -108,7 +109,7 @@ void Player::Draw(int pX, int pY, float poleX[BALL_MAX_NUM], float poleY[BALL_MA
 	DrawRotaGraphF(x - pX, y - pY, 0.5f, radian + sRad, handle, true, direction);
 
 	//“–‚½‚è”»’è
-	DrawBox(x - 32 / 2-pX, y - 32 / 2-pY, x+32/2-pX, y+32/2-pY, GetColor(255, 0, 0), false);
+	//DrawBox(x - 32 / 2-pX, y - 32 / 2-pY, x+32/2-pX, y+32/2-pY, GetColor(255, 0, 0), false);
 }
 void Player::Fin()
 {
