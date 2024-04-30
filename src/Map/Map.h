@@ -34,7 +34,6 @@ enum MAP3_ID
 	MAP3_MAX_NUM
 };
 
-
 const char FILE1_PATH[MAP1_MAX_NUM][255] = //データのファイルパス
 {			
 	"data/map/1/mapData_No1.bin", 
