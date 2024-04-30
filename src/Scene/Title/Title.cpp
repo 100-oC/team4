@@ -1,6 +1,7 @@
 #include"DxLib.h"
 #include"Title.h"
 #include"../Scene.h"
+#include"../../Map/Map.h"
 
 //‰Šú‰»
 void Title::Init()
@@ -55,7 +56,7 @@ void Title::Draw()
 //I—¹ˆ—
 void Title::Fin()
 {
-
+	map.goal.SetStage();
 	//Ÿ‚ÌƒV[ƒ“‚ÉˆÚ“®
 	g_CurrentSceneID = SCENE_ID_INIT_PLAY;
 }

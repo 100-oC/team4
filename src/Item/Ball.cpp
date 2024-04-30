@@ -7,18 +7,71 @@ void Ball::Init()
 	handle = LoadGraph(BALL_IMAGE_PATH);
 
 	//•Ï”‚Ì‰Šú‰»
-	memset(x, -1, sizeof(float));
-	memset(y, -1, sizeof(float));
-	memset(isUse, false, sizeof(bool));
+	for (int i = 0; i < BALL_MAX_NUM; i++)
+	{
+		x[i] = -1;
+		y[i] = -1;
+		isUse[i] = false;
+	}
 
 	//“Ç‚İæ‚Á‚½ƒf[ƒ^‚ğ”½‰f
 	for (int i = 0; i < BALL_MAX_NUM; i++)
 	{
-		if (map.mapData.ball[i].isUse)
+		if (!map.mapData1.ball[i].isUse)
 		{
-			x[i] = map.mapData.ball[i].x;
-			y[i] = map.mapData.ball[i].y;
-			isUse[i] = true;
+			continue;
+		}
+		for (int n = 0; n < BALL_MAX_NUM; n++)
+		{
+			if (isUse[n])
+			{
+				continue;
+			}
+
+			x[n] = map.mapData1.ball[i].x;
+			y[n] = map.mapData1.ball[i].y;
+			isUse[n] = true;
+			break;
+		}
+	}
+
+	for (int i = 0; i < BALL_MAX_NUM; i++)
+	{
+		if (!map.mapData2.ball[i].isUse)
+		{
+			continue;
+		}
+		for (int n = 0; n < BALL_MAX_NUM; n++)
+		{
+			if (isUse[n])
+			{
+				continue;
+			}
+
+			x[n] = map.mapData2.ball[i].x;
+			y[n] = map.mapData2.ball[i].y;
+			isUse[n] = true;
+			break;
+		}
+	}
+
+	for (int i = 0; i < BALL_MAX_NUM; i++)
+	{
+		if (!map.mapData3.ball[i].isUse)
+		{
+			continue;
+		}
+		for (int n = 0; n < BALL_MAX_NUM; n++)
+		{
+			if (isUse[n])
+			{
+				continue;
+			}
+
+			x[n] = map.mapData3.ball[i].x;
+			y[n] = map.mapData3.ball[i].y;
+			isUse[n] = true;
+			break;
 		}
 	}
 }
@@ -42,5 +95,4 @@ void Ball::Draw(int pX, int pY)
 
 void Ball::Fin()
 {
-
 }
