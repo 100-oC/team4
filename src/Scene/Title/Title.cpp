@@ -6,6 +6,8 @@
 //‰Šú‰»
 void Title::Init()
 {
+	Sound::Init();
+
 	memset(x, 0, sizeof(int));
 	memset(y, 0, sizeof(int));
 
@@ -19,6 +21,7 @@ void Title::Init()
 
 	mouse = 0;
 
+	Sound::Bgm::Play(BGM_TITLE);
 	//’Êíˆ—‚ÖˆÚ“®
 	g_CurrentSceneID = SCENE_ID_LOOP_TITLE;
 }
@@ -39,6 +42,7 @@ void Title::Step()
 	if (Input::Mouse::Push(MOUSE_INPUT_LEFT) && mouse == 1)
 	{
 		g_CurrentSceneID = SCENE_ID_FIN_TITLE;
+		Sound::Se::Play(SE_SYSTEM);
 	}
 }
 
@@ -56,6 +60,9 @@ void Title::Draw()
 //I—¹ˆ—
 void Title::Fin()
 {
+	Sound::Bgm::StopSound(BGM_TITLE);
+	Sound::Bgm::Play(BGM_PLAY);
+
 	map.goal.SetStage();
 	//Ÿ‚ÌƒV[ƒ“‚ÉˆÚ“®
 	g_CurrentSceneID = SCENE_ID_INIT_PLAY;

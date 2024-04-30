@@ -9,6 +9,8 @@ void Result::Init()
 
 	//’Êíˆ—‚ÖˆÚ“®
 	g_CurrentSceneID = SCENE_ID_LOOP_RESULT;
+
+	Sound::Bgm::Play(BGM_RESULT);
 }
 
 //’Êíˆ—
@@ -17,6 +19,7 @@ void Result::Step()
 	if (Input::Mouse::Push(MOUSE_INPUT_LEFT))
 	{
 		g_CurrentSceneID = SCENE_ID_FIN_RESULT;
+		Sound::Se::Play(SE_SYSTEM);
 	}
 }
 
@@ -29,7 +32,7 @@ void Result::Draw()
 //I—¹ˆ—
 void Result::Fin()
 {
-
+	Sound::Bgm::StopSound(BGM_RESULT);
 	//Ÿ‚ÌƒV[ƒ“‚ÉˆÚ“®
 	g_CurrentSceneID = SCENE_ID_INIT_TITLE;
 }

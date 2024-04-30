@@ -52,6 +52,7 @@ void Goal::Step(float plX, float plY)
 	{
 		stage++;
 		g_CurrentSceneID = SCENE_ID_FIN_PLAY;
+		Sound::Se::Play(SE_GOAL);
 	}
 }
 

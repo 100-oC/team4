@@ -3,6 +3,7 @@
 #include"../FrameRate/FrameRate.h"
 #include"../Input/Input.h"
 #include"../MathPlus/MathPlus.h"
+#include"../Sound/Sound.h"
 
 // define
 #define	SCREEN_SIZE_X	1280	// X方向の画面サイズを指定

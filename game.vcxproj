@@ -32,6 +32,7 @@
     <ClCompile Include="src\Scene\Scene.cpp" />
     <ClCompile Include="src\Scene\Title\Title.cpp" />
     <ClCompile Include="src\Screen\Screen.cpp" />
+    <ClCompile Include="src\Sound\Sound.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\FrameRate\FrameRate.h" />
@@ -46,6 +47,7 @@
     <ClInclude Include="src\Scene\Scene.h" />
     <ClInclude Include="src\Scene\Title\Title.h" />
     <ClInclude Include="src\Screen\Screen.h" />
+    <ClInclude Include="src\Sound\Sound.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
