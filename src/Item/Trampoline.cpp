@@ -8,20 +8,75 @@ void Trampoline::Init()
 	handle = LoadGraph(TRAMPOLINE_IMAGE_PATH);
 
 	//変数の初期化
-	memset(x, -1, sizeof(float));
-	memset(y, -1, sizeof(float));
-	memset(radian, 0, sizeof(float));
-	memset(isUse, false, sizeof(bool));
+	for (int i = 0; i < TRAMPOLINE_MAX_NUM; i++)
+	{
+		x[i] = -1;
+		y[i] = -1;
+		radian[i] = 0;
+		isUse[i] = false;
+	}
 
 	//読み取ったデータを反映
 	for (int i = 0; i < TRAMPOLINE_MAX_NUM; i++)
 	{
-		if (map.mapData.tra[i].isUse)
+		if (!map.mapData1.tra[i].isUse)
 		{
-			x[i] = map.mapData.tra[i].x;
-			y[i] = map.mapData.tra[i].y;
-			radian[i] = map.mapData.tra[i].radian;
-			isUse[i] = true;
+			continue;
+		}
+		for (int n = 0; n < TRAMPOLINE_MAX_NUM; n++)
+		{
+			if (isUse[n])
+			{
+				continue;
+			}
+
+			x[n] = map.mapData1.tra[i].x;
+			y[n] = map.mapData1.tra[i].y;
+			radian[n] = map.mapData1.tra[i].radian;
+			isUse[n] = true;
+			break;
+		}
+	}
+
+	for (int i = 0; i < TRAMPOLINE_MAX_NUM; i++)
+	{
+		if (!map.mapData2.tra[i].isUse)
+		{
+			continue;
+		}
+		for (int n = 0; n < TRAMPOLINE_MAX_NUM; n++)
+		{
+			if (isUse[n])
+			{
+				continue;
+			}
+
+			x[n] = map.mapData2.tra[i].x;
+			y[n] = map.mapData2.tra[i].y;
+			radian[n] = map.mapData2.tra[i].radian;
+			isUse[n] = true;
+			break;
+		}
+	}
+
+	for (int i = 0; i < TRAMPOLINE_MAX_NUM; i++)
+	{
+		if (!map.mapData3.tra[i].isUse)
+		{
+			continue;
+		}
+		for (int n = 0; n < TRAMPOLINE_MAX_NUM; n++)
+		{
+			if (isUse[n])
+			{
+				continue;
+			}
+
+			x[n] = map.mapData3.tra[i].x;
+			y[n] = map.mapData3.tra[i].y;
+			radian[n] = map.mapData3.tra[i].radian;
+			isUse[n] = true;
+			break;
 		}
 	}
 }
@@ -30,7 +85,7 @@ void Trampoline::Step(Player &pl)
 {
 	for (int i = 0; i < TRAMPOLINE_MAX_NUM; i++)
 	{
-		if (!map.mapData.tra[i].isUse)
+		if (!isUse[i])
 		{
 			continue;
 		}
@@ -70,7 +125,7 @@ void Trampoline::Draw(int pX, int pY)
 	//トランポリン表示
 	for (int i = 0; i < TRAMPOLINE_MAX_NUM; i++)
 	{
-		if (isUse[i])
+		if (isUse[i] && x[i] != -1)
 		{
 			DrawRotaGraphF(x[i] - pX, y[i] - pY, 1.0f, radian[i], handle, true);
 		}

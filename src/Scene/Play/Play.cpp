@@ -21,8 +21,11 @@ void Play::Init()
 
 	player.Init();
 
+	int map1Num = GetRand(MAP1_MAX_NUM - 1);
+	int map2Num = GetRand(MAP2_MAX_NUM - 1);
+	int map3Num = GetRand(MAP3_MAX_NUM - 1);
 	//マップの種類：Map.h参照
-	map.Init(MAP_TEST);
+	map.Init(map1Num, map2Num, map3Num);
 
 	bound.Init();
 	ball.Init();
@@ -36,17 +39,19 @@ void Play::Init()
 //通常処理
 void Play::Step()
 {
-
 	player.Step(ball.ALLGetBallx(), ball.ALLGetBally());
 	screen.Step(player);
 	bound.Step(player);
 	ball.Step();
+	map.goal.Step(player.GetPosX(), player.GetPosY());
 }
 
 //描画処理
 void Play::Draw()
 {
 	DrawGraph(0, 0, backHandle, true);
+
+	map.goal.Draw(screen.GetPosX());
 
 	bound.Draw(screen.GetPosX(),screen.GetPosY());
 	player.Draw(screen.GetPosX(), screen.GetPosY(), ball.ALLGetBallx(), ball.ALLGetBally());
@@ -60,6 +65,14 @@ void Play::Fin()
 	player.Fin();
 	ball.Fin();
 
-	//次のシーンに移動
-	g_CurrentSceneID = SCENE_ID_INIT_RESULT;
+	int st = map.goal.GetStage();
+	if (st >= 10)
+	{
+		//次のシーンに移動
+		g_CurrentSceneID = SCENE_ID_INIT_RESULT;
+	}
+	else
+	{
+		g_CurrentSceneID = SCENE_ID_INIT_PLAY;
+	}
 }

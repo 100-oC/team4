@@ -12,10 +12,10 @@ private:
 	int handle = -1;		//画像
 
 	//座標
-	float x[TRAMPOLINE_MAX_NUM];
-	float y[TRAMPOLINE_MAX_NUM];
+	float x[BALL_MAX_NUM];
+	float y[BALL_MAX_NUM];
 
-	bool isUse[TRAMPOLINE_MAX_NUM];		//使用フラグ
+	bool isUse[BALL_MAX_NUM];		//使用フラグ
 
 public:
 	void Init();
