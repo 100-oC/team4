@@ -69,11 +69,13 @@ void Player::Step(float poleX[BALL_MAX_NUM], float poleY[BALL_MAX_NUM])
 
 	if (angle > 360)angle = 0.0;
 
-	if (CheckHitKey(KEY_INPUT_F) && !isPendulumActive) {
+	//if (CheckHitKey(KEY_INPUT_F) && !isPendulumActive) {
+	if (Input::Mouse::Keep(MOUSE_INPUT_LEFT) && !isPendulumActive) {
 
 		ConnectToNearestPole(poleX, poleY); // Fキーが押されたときの処理
 	}
-	if (!CheckHitKey(KEY_INPUT_F) && isPendulumActive) {
+	//if (!CheckHitKey(KEY_INPUT_F) && isPendulumActive) {
+	if (!Input::Mouse::Keep(MOUSE_INPUT_LEFT) && isPendulumActive) {
 		isPendulumActive = false;
 		ReleaseKey();
 	}
@@ -88,7 +90,7 @@ void Player::Step(float poleX[BALL_MAX_NUM], float poleY[BALL_MAX_NUM])
 	Bounce();
 
 	//プレイヤーが画面下に落ちたら
-	if (y >= SCREEN_SIZE_Y + 50&& !CheckHitKey(KEY_INPUT_F))
+	if (y >= SCREEN_SIZE_Y + 50&& !Input::Mouse::Keep(MOUSE_INPUT_LEFT))
 	{
 		x = START_POS_X;
 		y = START_POS_Y;
