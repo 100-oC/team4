@@ -36,7 +36,6 @@ void Play::Init()
 //’Êíˆ—
 void Play::Step()
 {
-
 	player.Step(ball.ALLGetBallx(), ball.ALLGetBally());
 	screen.Step(player);
 	bound.Step(player);

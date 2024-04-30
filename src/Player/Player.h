@@ -37,10 +37,19 @@ public:
 
 	void ReleaseKey();
 
+	void Bounce();
+
+	void SetisBounce();
+
+	bool GetisBounce() { return isBounce; }
+
 	int GetnearestPoleIndex() { return nearestPoleIndex; }
 
 	float GetvelocityX() { return velocityX; }
 	float GetvelocityY() { return velocityY; }
+
+	void SetvelocityX(float i);
+	void SetvelocityY(float i);
 private:
 	int handle;			//‰æ‘œ
 	float x, y;			//À•W
@@ -68,4 +77,6 @@ private:
 	float timeStep;
 
 	int nearestPoleIndex;
+
+	bool isBounce;
 };
