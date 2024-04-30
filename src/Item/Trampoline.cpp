@@ -43,8 +43,8 @@ void Trampoline::Step(Player &pl)
 		{
 			if (!pl.GetisBounce())
 			{
-				if (pl.GetvelocityX() < x[i])pl.SetvelocityX(pl.GetvelocityX());
-				if (pl.GetvelocityX() > x[i])pl.SetvelocityX(-pl.GetvelocityX());
+				if (pl.GetvelocityX() <= x[i])pl.SetvelocityX(pl.GetvelocityX()/2);
+				if (pl.GetvelocityX() >= x[i])pl.SetvelocityX(-pl.GetvelocityX()/2);
 
 				pl.SetvelocityY(-pl.GetvelocityY());
 			}
