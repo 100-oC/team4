@@ -30,6 +30,8 @@ void Player::Init()
 	float timeStep = 0;
 
 	nearestPoleIndex = -1;
+
+	isBounce = false;
 }
 
 void Player::Step(float poleX[BALL_MAX_NUM], float poleY[BALL_MAX_NUM])
@@ -79,9 +81,11 @@ void Player::Step(float poleX[BALL_MAX_NUM], float poleY[BALL_MAX_NUM])
 	x += velocityX;
 	y += velocityY;
 	// 重力をシミュレート
-	velocityY += 0.1;
+	velocityY += 0.5;
 
 	UpdatePendulum(poleX, poleY); // 振り子の更新
+
+	Bounce();
 
 	//プレイヤーが画面下に落ちたら
 	if (y >= SCREEN_SIZE_Y + 50&& !CheckHitKey(KEY_INPUT_F))
@@ -232,3 +236,27 @@ void Player::ReleaseKey()
 	if (abs(velocityY) > maxVelocity) velocityY = (velocityY > 0) ? maxVelocity : -maxVelocity;
 }
 
+void Player::Bounce() 
+{
+	if (isBounce) {
+		x += velocityX;
+		y += velocityY;
+		if (x == velocityX || y == velocityY)
+			isBounce = false;
+	}
+}
+
+void Player::SetisBounce()
+{
+	if (!isBounce)isBounce = true;
+	else isBounce = false;
+}
+
+void Player::SetvelocityX(float i)
+{
+	velocityX = i;
+}
+void Player::SetvelocityY(float i)
+{
+	velocityY = i;
+}

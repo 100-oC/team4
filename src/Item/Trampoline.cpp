@@ -96,24 +96,32 @@ void Trampoline::Step(Player &pl)
 			y[i] - TRA_IMAGE_SIZE_Y / 2,
 			TRA_IMAGE_SIZE_X, TRA_IMAGE_SIZE_Y))
 		{
-			float rad = 0.0f;
-			//Šp“x‚ªis•ûŒü‘¤
-			if (pl.GetRadian() >= 0)
+			if (!pl.GetisBounce())
 			{
-				//90‹‚©‚çŒ©‚Ä‚ÌŠp“x
-				rad = 90 - ChangeRadToDeg(pl.GetRadian());
+				if (pl.GetvelocityX() < x[i])pl.SetvelocityX(pl.GetvelocityX());
+				if (pl.GetvelocityX() > x[i])pl.SetvelocityX(-pl.GetvelocityX());
 
+				pl.SetvelocityY(-pl.GetvelocityY());
 			}
-			//ª‚Ì‹t
-			else
-			{
-				//90‹‚©‚çŒ©‚Ä‚ÌŠp“x
-				rad = -90 + ChangeRadToDeg(pl.GetRadian());
-			}
-			//Šp“x‚ğİ’è
-			pl.SetSRadian(ChangeDegToRad(rad * 2));
-			//‘¬‚³‚ğ­‚µ‘‚ß‚é
-			pl.SetSpeed(pl.GetSpeed() * -1.1f);
+			pl.SetisBounce();
+			//float rad = 0.0f;
+			////Šp“x‚ªis•ûŒü‘¤
+			//if (pl.GetRadian() >= 0)
+			//{
+			//	//90‹‚©‚çŒ©‚Ä‚ÌŠp“x
+			//	rad = 90 - ChangeRadToDeg(pl.GetRadian());
+
+			//}
+			////ª‚Ì‹t
+			//else
+			//{
+			//	//90‹‚©‚çŒ©‚Ä‚ÌŠp“x
+			//	rad = -90 + ChangeRadToDeg(pl.GetRadian());
+			//}
+			////Šp“x‚ğİ’è
+			//pl.SetSRadian(ChangeDegToRad(rad * 2));
+			////‘¬‚³‚ğ­‚µ‘‚ß‚é
+			//pl.SetSpeed(pl.GetSpeed() * -1.1f);
 
 		}
 	}
@@ -131,6 +139,7 @@ void Trampoline::Draw(int pX, int pY)
 		}
 	}
 }
+
 
 void Trampoline::Fin()
 {
